@@ -1,0 +1,44 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignación de Sección</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "canvas-confetti": "https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.module.mjs"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="startScreen">
+        <button id="startButton">Presiona aquí</button>
+    </div>
+
+    <div id="appContainer" class="hidden-content">
+        <img src="decor_top_left.png" alt="Books and apple decoration" class="decor decor-top-left">
+        <img src="decor_top_right.png" alt="Chalkboard decoration" class="decor decor-top-right">
+        <img src="decor_bottom_right.png" alt="Pencil and ruler decoration" class="decor decor-bottom-right">
+        <img src="decor_bottom_left.png" alt="Backpack decoration" class="decor decor-bottom-left">
+
+        <div class="container">
+            <div class="input-group">
+                <label for="teacherName">Asignación de Sección</label>
+                <input type="text" id="teacherName" placeholder="Escribe el nombre aquí">
+                <button id="assignButton">Asignar</button>
+            </div>
+            <div id="result" class="result-text"></div>
+            <div class="visual-effects">
+                <img id="teacherImage" src="happy_teacher.png" alt="Maestra Feliz" class="hidden">
+                <canvas id="confettiCanvas" class="hidden"></canvas>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

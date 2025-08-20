@@ -1,0 +1,273 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f8ff;
+    background-image: url('background_pattern.png');
+    color: #333;
+    overflow: hidden; /* Prevent scrollbar from confetti */
+}
+
+#startScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f0f8ff; /* Same as body background */
+    background-image: url('background_pattern.png');
+    position: absolute; /* Take full screen */
+    top: 0;
+    left: 0;
+    z-index: 10; /* Ensure it's above other content */
+}
+
+#startButton {
+    background-color: #4CAF50; /* A nice green color */
+    color: white;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 0 #388E3C; /* Darker green for shadow */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#startButton:hover {
+    background-color: #66BB6A;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 0 #388E3C;
+}
+
+#startButton:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 0 #388E3C;
+}
+
+#appContainer {
+    position: relative; /* For decor absolute positioning inside it */
+    min-height: 100vh; /* Make sure it takes full height when visible */
+    width: 100%; /* Take full width */
+    display: flex; /* Align items inside it */
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden-content {
+    display: none;
+}
+
+.decor {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    z-index: 2;
+}
+
+.decor-top-left {
+    top: 20px;
+    left: 20px;
+}
+
+.decor-top-right {
+    top: 20px;
+    right: 20px;
+}
+
+.decor-bottom-right {
+    bottom: 50px;
+    right: 20px;
+}
+
+.decor-bottom-left {
+    bottom: 50px;
+    left: 20px;
+}
+
+.container {
+    background-color: #3a5a40; /* Chalkboard green */
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 15px rgba(0,0,0,0.4); /* Inner shadow for depth */
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    z-index: 1;
+    border: 15px solid #83583a; /* Wood frame color */
+}
+
+h1 {
+    color: #f0f0f0;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #f0f0f0;
+    font-size: 1.8em;
+}
+
+input[type="text"] {
+    width: calc(100% - 20px); /* Adjusted for padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px dashed rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    opacity: 1; /* Firefox */
+}
+
+input[type="text"]:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    outline: none;
+}
+
+button {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 4px 0 #c44d4d;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-color: #ff8e8e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #c44d4d;
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 0 #c44d4d;
+}
+
+.result-text {
+    margin-top: 25px;
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #f0f0f0;
+    min-height: 3em; /* Prevent layout shift */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    line-height: 1.2;
+    padding: 0 10px;
+}
+
+.result-text.animate span {
+    position: relative;
+    display: inline-block;
+    animation: wave-animation 1.5s ease-in-out infinite, rainbow-text 5s linear infinite alternate;
+}
+
+@keyframes wave-animation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes rainbow-text {
+    0% { color: #ff6b6b; }
+    15% { color: #ffa500; }
+    30% { color: #f9ff6b; }
+    45% { color: #7fff00; }
+    60% { color: #6bc9ff; }
+    75% { color: #8a2be2; }
+    90% { color: #ff6bdf; }
+    100% { color: #ff6b6b; }
+}
+
+.visual-effects {
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+    height: 220px; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+#teacherImage {
+    max-width: 100%;
+    height: 220px;
+    object-fit: contain;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: scale(0.9);
+}
+
+#confettiCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows clicks to pass through */
+    transition: opacity 0.5s ease;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    transform: scale(0.8);
+    display: block; /* Ensure block level elements can be hidden with height 0 */
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+    height: 220px; /* Reset height for visibility */
+    transform: scale(1);
+    display: block; /* Ensure block level elements are visible */
+}
+
+@media (max-width: 600px) {
+    .decor {
+        width: 50px;
+    }
+    label {
+        font-size: 1.5em;
+    }
+    .result-text {
+        font-size: 1.2em;
+    }
+}
